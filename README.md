@@ -47,6 +47,136 @@ Stream operations are divided into two main types:
 
 ---
 
+## Sample Problems with Input/Output Examples
+
+### Map Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Square integers | `[1, 2, 3, 4, 5]` | `[1, 4, 9, 16, 25]` | `squareIntegers()` |
+| Convert to uppercase | `["apple", "banana", "cherry"]` | `["APPLE", "BANANA", "CHERRY"]` | `toUpperCase()` |
+| Extract employee names | `[Alice(30, HR, $60000), Bob(25, Engineering, $80000)]` | `["Alice", "Bob"]` | `extractEmployeeNames()` |
+| Add 10 to each | `[1, 2, 3, 4, 5]` | `[11, 12, 13, 14, 15]` | `addTen()` |
+| Get string lengths | `["apple", "banana", "cherry"]` | `[5, 6, 6]` | `stringLengths()` |
+| Employee initials | `[Alice(30, HR, $60000), Bob(25, Engineering, $80000)]` | `["A", "B"]` | `employeeInitials()` |
+| Salary bands | `[Alice($60000), Bob($80000), Diana($90000)]` | `["Low", "Medium", "High"]` | `employeeSalaryBands()` |
+
+### Filter Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Filter even numbers | `[1, 2, 3, 4, 5, 6]` | `[2, 4, 6]` | `filterEvenNumbers()` |
+| Filter by starting letter | `["apple", "banana", "cherry", "avocado"]` | `["apple", "avocado"]` | `filterByStartingLetter('a')` |
+| High salary employees | `[Alice($60000), Bob($80000), Charlie($75000)]` | `[Bob($80000), Charlie($75000)]` | `filterHighSalaryEmployees()` |
+| Remove null/empty | `["apple", "", null, "banana"]` | `["apple", "banana"]` | `removeNullOrEmpty()` |
+| Filter primes | `[1, 2, 3, 4, 5, 11, 13, 17, 20]` | `[2, 3, 5, 11, 13, 17]` | `filterPrimes()` |
+| Engineering employees | `[Alice(HR), Bob(Engineering), Charlie(Engineering)]` | `[Bob(Engineering), Charlie(Engineering)]` | `filterEmployeesByDeptAndAge("Engineering", 26)` |
+
+### Sort Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Sort integers | `[5, 2, 8, 1, 3]` | `[1, 2, 3, 5, 8]` | `sortIntegers()` |
+| Sort strings | `["banana", "apple", "cherry"]` | `["apple", "banana", "cherry"]` | `sortStrings()` |
+| Sort by age | `[Alice(30), Bob(25), Charlie(28)]` | `[Bob(25), Charlie(28), Alice(30)]` | `sortEmployeesByAge()` |
+| Sort descending | `[1, 2, 3, 4, 5]` | `[5, 4, 3, 2, 1]` | `sortIntegersDescending()` |
+| Sort by dept & salary | `[Alice(HR,$60k), Bob(Eng,$80k), Charlie(Eng,$75k)]` | `[Charlie(Eng,$75k), Bob(Eng,$80k), Alice(HR,$60k)]` | `sortEmployeesByDeptAndSalary()` |
+
+### Distinct Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Remove duplicates | `[1, 2, 2, 3, 4, 4, 5]` | `[1, 2, 3, 4, 5]` | `removeDuplicates()` |
+| Case-insensitive distinct | `["Apple", "Banana", "apple", "banana"]` | `["Apple", "Banana"]` | `removeDuplicateStringsIgnoreCase()` |
+| Distinct by ID | `[Alice(ID:1), Bob(ID:2), Charlie(ID:1)]` | `[Alice(ID:1), Bob(ID:2)]` | `removeDuplicateEmployeesById()` |
+| Distinct by name | `[Alice(ID:1), Bob(ID:2), Alice(ID:3)]` | `[Alice(ID:1), Bob(ID:2)]` | `removeDuplicateEmployeesByName()` |
+
+### FlatMap Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Flatten lists | `[[1,2,3], [4,5], [6,7,8]]` | `[1, 2, 3, 4, 5, 6, 7, 8]` | `flattenListOfLists()` |
+| Split sentences | `["Hello world", "Java streams"]` | `["Hello", "world", "Java", "streams"]` | `splitSentencesToWords()` |
+| Flatten skills | `[Alice([Java,Spring]), Bob([Java,React])]` | `[Java, Spring, Java, React]` | `flattenEmployeeSkills()` |
+| Unique projects | `[Alice([Payroll,Recruitment]), Bob([Inventory,Payroll])]` | `[Payroll, Recruitment, Inventory]` | `flattenEmployeeProjects()` |
+
+### Peek Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Log elements | `[1, 2, 3, 4, 5]` | `Peek: 1, Peek: 2, ...` + `[2, 4, 6, 8, 10]` | `logElements()` |
+| Debug pipeline | `["apple", "banana"]` | `Original: apple, Uppercased: APPLE, ...` + `[APPLE, BANANA]` | `debugPipeline()` |
+| Audit trail | `[1, 2, 3]` | `[2, 3, 4]` + `Audit trail: [1, 2, 3]` | `auditElements()` |
+| Count passing | `[1, 2, 3, 4, 5]` | `[2, 4]` + `Count of evens: 2` | `countPassingElements()` |
+
+### Limit/Skip Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| First 3 elements | `[1, 2, 3, 4, 5, 6, 7]` | `[1, 2, 3]` | `firstThree()` |
+| Skip first 2 | `["apple", "banana", "cherry", "date"]` | `["cherry", "date"]` | `skipTwo()` |
+| Paginate (page 2, size 3) | `[1, 2, 3, 4, 5, 6, 7]` | `[4, 5, 6]` | `paginate(2, 3)` |
+| Top 2 highest paid | `[Alice($60k), Bob($80k), Charlie($75k), Diana($90k)]` | `[Diana($90k), Bob($80k)]` | `topTwoHighestPaid()` |
+
+### Collect Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Collect to Set | `[1, 2, 3, 4, 5, 6, 7, 8]` | `{1, 2, 3, 4, 5, 6, 7, 8}` | `collectToSet()` |
+| Concatenate strings | `["apple", "banana", "cherry", "date"]` | `"apple, banana, cherry, date"` | `concatenateStrings()` |
+| Partition even/odd | `[1, 2, 3, 4, 5, 6, 7, 8]` | `{false=[1,3,5,7], true=[2,4,6,8]}` | `partitionEvenOdd()` |
+| Group by length | `["apple", "banana", "cherry", "date"]` | `{4=[date], 5=[apple], 6=[banana, cherry]}` | `groupByLength()` |
+| Group by department | `[Alice(HR), Bob(Eng), Charlie(Eng), Diana(Finance)]` | `{HR=[Alice], Engineering=[Bob,Charlie], Finance=[Diana]}` | `groupEmployeesByDepartment()` |
+
+### Reduce Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Sum numbers | `[1, 2, 3, 4, 5]` | `15` | `sumNumbers()` |
+| Find max | `[1, 2, 3, 4, 5]` | `5` | `findMax()` |
+| Concatenate strings | `["apple", "banana", "cherry"]` | `"applebananacherry"` | `concatenateStrings()` |
+| Product of numbers | `[1, 2, 3, 4, 5]` | `120` | `productNumbers()` |
+| Highest salary employee | `[Alice($60k), Bob($80k), Charlie($75k)]` | `Bob ($80k)` | `employeeWithHighestSalary()` |
+
+### Min/Max Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Find minimum | `[5, 2, 8, 1, 3]` | `1` | `findMin()` |
+| Find maximum | `[5, 2, 8, 1, 3]` | `8` | `findMax()` |
+| Highest salary employee | `[Alice($60k), Bob($80k), Charlie($75k)]` | `Bob ($80k)` | `employeeWithHighestSalary()` |
+| Lowest age employee | `[Alice(30), Bob(25), Charlie(28)]` | `Bob (25)` | `employeeWithLowestAge()` |
+| Longest string | `["banana", "apple", "cherry", "date"]` | `"banana"` | `stringWithMaxLength()` |
+
+### Count Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Count elements | `[1, 2, 3, 4, 5, 6, 7]` | `7` | `countElements()` |
+| Count long strings | `["apple", "banana", "cherry", "date", "elderberry"]` | `3` | `countLongStrings()` |
+| Count Engineering employees | `[Alice(HR), Bob(Eng), Charlie(Eng), Diana(Finance)]` | `2` | `countEngineeringEmployees()` |
+| Count high salary | `[Alice($60k), Bob($80k), Charlie($75k), Diana($90k)]` | `3` | `countHighSalaryEmployees()` |
+| Count unique departments | `[Alice(HR), Bob(Eng), Charlie(Eng), Diana(Finance)]` | `3` | `countUniqueDepartments()` |
+
+### ForEach Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Print elements | `[1, 2, 3, 4, 5]` | `Element: 1, Element: 2, ...` | `printElements()` |
+| Print name & salary | `[Alice($60k), Bob($80k)]` | `Alice: $60000, Bob: $80000` | `printEmployeeNameSalary()` |
+| Print reverse | `["apple", "banana", "cherry", "date"]` | `Reverse: date, Reverse: cherry, ...` | `printReverse()` |
+| Print Engineering dept | `[Alice(HR), Bob(Eng), Charlie(Eng)]` | `Bob (Engineering), Charlie (Engineering)` | `printEmployeesInDepartment("Engineering")` |
+| Print high salary | `[Alice($60k), Bob($80k), Charlie($75k)]` | `Bob ($80k), Charlie ($75k)` | `printHighSalaryEmployees(75000)` |
+
+### Match/Find Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| Any even | `[1, 3, 5, 7, 8]` | `true` | `anyEven()` |
+| All non-empty | `["Apple", "Banana", "", "Avocado"]` | `false` | `allNonEmpty()` |
+| None under 18 | `[Alice(30), Bob(25), Charlie(28)]` | `true` | `noneUnder18()` |
+| First starting with 'A' | `["Apple", "Banana", "Avocado"]` | `"Apple"` | `findFirstA()` |
+| Any in Engineering | `[Alice(HR), Bob(Engineering), Charlie(Engineering)]` | `Bob (Engineering)` | `findAnyEngineering()` |
+| All salary above threshold | `[Alice($60k), Bob($80k), Charlie($75k)]` | `false` | `allSalaryAbove("Engineering", 70000)` |
+| First salary above | `[Alice($60k), Bob($80k), Charlie($75k)]` | `Bob ($80k)` | `findFirstSalaryAbove(80000)` |
+
+### ToArray Operations
+| Problem | Input | Output | Function Name |
+|---------|-------|--------|---------------|
+| To Integer array | `[1, 2, 3, 4, 5]` | `[1, 2, 3, 4, 5]` | `toIntegerArray()` |
+| To String array | `["apple", "banana", "cherry"]` | `["apple", "banana", "cherry"]` | `toStringArray()` |
+| To Employee array | `[Alice(30,HR,$60k), Bob(25,Eng,$80k)]` | `[Alice(30,HR,$60k), Bob(25,Eng,$80k)]` | `toEmployeeArray()` |
+| Uppercase to array | `["apple", "banana", "cherry"]` | `["APPLE", "BANANA", "CHERRY"]` | `uppercaseToArray()` |
+
+---
+
 ## Example Classes & Practice Problems
 
 Each example class in this project:
@@ -182,7 +312,7 @@ Each example class in this project:
 
 **Practice Problems:**
 - Print each element in a list
-- Print each employee’s name and salary
+- Print each employee's name and salary
 - Advanced: Print all strings in reverse order
 - Custom: Print all employees in a specific department
 - Custom: Print all employees with salary above a threshold
