@@ -1,3 +1,17 @@
+/*
+ * Copyright (c) 2024 Java Streams Tutorial
+ * 
+ * This file is part of the Java Streams Tutorial project.
+ * All rights reserved.
+ * 
+ * This source code is protected by copyright law and international treaties.
+ * Unauthorized reproduction or distribution of this file, or any portion of it,
+ * may result in severe civil and criminal penalties, and will be prosecuted
+ * to the maximum extent possible under the law.
+ * 
+ * For licensing information, please contact the copyright holder.
+ */
+
 package src.main.java.streams.IntermediateOperations;
 
 import java.util.List;

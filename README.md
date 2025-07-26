@@ -11,6 +11,19 @@
 
 </div>
 
+<div align="center">
+
+**⚠️ IMPORTANT: This repository is protected by copyright. Please fork this repository instead of copying content directly.**
+
+[![Fork](https://img.shields.io/badge/Fork-This%20Repo-FF6B6B?style=for-the-badge&logo=github)](https://github.com/yourusername/java_streams/fork)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Issues](https://img.shields.io/badge/Issues-Welcome-4CAF50?style=for-the-badge&logo=github)](https://github.com/yourusername/java_streams/issues)
+[![Contributions](https://img.shields.io/badge/Contributions-Welcome-FF6B6B?style=for-the-badge&logo=github)](https://github.com/yourusername/java_streams/pulls)
+
+**© 2024 Java Streams Tutorial. All rights reserved.**
+
+</div>
+
 ---
 
 ## 📖 Introduction
@@ -270,5 +283,58 @@ Each example class in this project:
 **Master Java Streams and level up your functional programming skills!** 🚀
 
 ![Java Streams](https://img.shields.io/badge/Java%20Streams-Mastered-4CAF50?style=for-the-badge&logo=java&logoColor=white)
+
+</div>
+
+---
+
+<div align="center">
+
+## 🔒 **Copyright Protection**
+
+**© 2024 Java Streams Tutorial. All rights reserved.**
+
+This repository and all its contents are protected by copyright law and international treaties. 
+Unauthorized reproduction, distribution, or copying of this content may result in severe civil 
+and criminal penalties, and will be prosecuted to the maximum extent possible under the law.
+
+**✅ Proper Usage:** Fork this repository and give proper attribution  
+**❌ Prohibited:** Direct copying without permission or attribution
+
+**For licensing inquiries:** Contact the copyright holder
+
+---
+
+## 🤝 **Contributions & Feedback Welcome!**
+
+### 💡 **Want to Improve This Tutorial?**
+
+We'd love your help to make this Java Streams tutorial even better! Here's how you can contribute:
+
+#### 🐛 **Report Issues**
+- Found a bug in the examples?
+- Spotted an error in the documentation?
+- Have a suggestion for improvement?
+- **→ [Raise an Issue](https://github.com/yourusername/java_streams/issues)**
+
+#### ✨ **Contribute Examples**
+- Add new stream operation examples
+- Improve existing examples with better use cases
+- Add more advanced interview-level problems
+- **→ [Submit a Pull Request](https://github.com/yourusername/java_streams/pulls)**
+
+#### 📚 **Enhance Documentation**
+- Improve explanations and comments
+- Add more practice problems
+- Suggest better formatting or organization
+- **→ [Fork and Contribute](https://github.com/yourusername/java_streams/fork)**
+
+### 🙏 **Your Contributions Are Much Appreciated!**
+
+Every contribution, no matter how small, helps make this tutorial better for the entire Java community. Thank you for your support! 🚀
+
+---
+
+**Thank you for respecting intellectual property rights!** 🙏
 
 </div>

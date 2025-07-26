@@ -1,0 +1,39 @@
+# Copyright Protection - DO NOT REMOVE
+# This file helps protect the repository content
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Build files
+target/
+build/
+*.class
+*.jar
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Personal notes (protect your work)
+notes.md
+TODO.md
+personal/
+
+# Copyright notice - DO NOT MODIFY
+# This repository is protected by copyright law
+# Unauthorized copying is prohibited 
