@@ -87,6 +87,52 @@ Stream operations are divided into two main types:
 
 ### 🔄 Map Operations
 
+<div align="center">
+
+#### 📊 **Map Operations Summary Table**
+
+| Method | Input Stream | Output Stream | Use Case | When to Use |
+|:------:|:------------:|:-------------:|:---------|:------------|
+| `map()` | `Stream<T>` | `Stream<R>` | Generic transformation | Transform each element independently |
+| `flatMap()` | `Stream<T>` | `Stream<R>` | Flatten nested collections | When you have nested structures to flatten |
+| `mapToInt()` | `Stream<T>` | `IntStream` | Convert to primitive int | Better performance for int operations |
+| `mapToLong()` | `Stream<T>` | `LongStream` | Convert to primitive long | Handle large numbers without overflow |
+| `mapToDouble()` | `Stream<T>` | `DoubleStream` | Convert to primitive double | Mathematical operations with decimals |
+| `mapToObj()` | `IntStream, etc.` | `Stream<T>` | Convert primitive to object | Chain primitive and object operations |
+
+</div>
+
+#### 🎯 **When to Use Map() vs Reduce()**
+
+<div align="center">
+
+| **Use Map() When:** | **Use Reduce() When:** |
+|:-------------------:|:----------------------:|
+| ✅ Transform each element independently | ✅ Combine all elements into a single result |
+| ✅ Need 1:1 mapping (one input → one output) | ✅ Need aggregation (sum, product, concatenation) |
+| ✅ Extract properties or apply functions | ✅ Find min/max values |
+| ✅ Change data types | ✅ Build complex objects from multiple elements |
+| ✅ Maintain the same number of elements | ✅ Reduce collection to a single value |
+| ✅ Apply same operation to each element | ✅ Accumulate state across elements |
+
+</div>
+
+**🔍 Key Differences:**
+- **Map()**: `[1,2,3] → [2,4,6]` (transform each)
+- **Reduce()**: `[1,2,3] → 6` (combine all)
+
+**💡 Internal Working:**
+- **Map()**: Each element processed independently, lazy evaluation, easily parallelizable
+- **Reduce()**: Elements combined sequentially, requires accumulator, harder to parallelize
+
+**⚠️ Common Mistakes:**
+- Using `reduce()` to transform each element (wrong!)
+- Using `map()` to combine all elements (wrong!)
+- Using `reduce()` when you need to maintain element count
+- Using `map()` when you need a single aggregated result
+
+#### 🎯 **Basic Map() Operations**
+
 | Sample Problem (as in Example class) | Input | Output | Function Name |
 |:------------------------------------:|:-----:|:------:|:-------------:|
 | Convert a list of integers to their squares | `[1, 2, 3, 4, 5]` | `[1, 4, 9, 16, 25]` | [`squareIntegers()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
@@ -94,12 +140,35 @@ Stream operations are divided into two main types:
 | Given a list of Employee objects, extract their names | `[Alice(30, HR, $60000), Bob(25, Engineering, $80000)]` | `["Alice", "Bob"]` | [`extractEmployeeNames()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
 | Add 10 to each element in a list | `[1, 2, 3, 4, 5]` | `[11, 12, 13, 14, 15]` | [`addTen()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
 | Convert a list of strings to their lengths | `["apple", "banana", "cherry"]` | `[5, 6, 6]` | [`stringLengths()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
-| **Advanced:** Given a list of sentences, return a list of word counts for each sentence | `["Hello world", "Java streams are powerful"]` | `[2, 4]` | [`sentenceWordCounts()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
-| **Advanced:** Map Employee list to their department names in uppercase (interview-level) | `[Alice(HR), Bob(Engineering)]` | `["HR", "ENGINEERING"]` | [`employeeDepartmentsUpper()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
-| **Advanced:** Map Employee list to a stream of their name lengths (interview-level) | `[Alice, Bob]` | `[5, 3]` | [`employeeNameLengths()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
-| **Custom:** Map Employee list to their initials | `[Alice, Bob]` | `["A", "B"]` | [`employeeInitials()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
-| **Custom:** Map Employee list to salary bands (e.g., "Low", "Medium", "High") | `[Alice($60000), Bob($80000), Diana($90000)]` | `["Low", "Medium", "High"]` | [`employeeSalaryBands()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
-| **Custom:** Map Employee list to name-department pairs (e.g., "Alice-HR") | `[Alice(HR), Bob(Engineering)]` | `["Alice-HR", "Bob-Engineering"]` | [`employeeNameDepartmentPairs()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **Advanced:** Map Employee list to salary bands (e.g., "Low", "Medium", "High") | `[Alice($60000), Bob($80000), Diana($90000)]` | `["Low", "Medium", "High"]` | [`employeeSalaryBands()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **Advanced:** Map Employee list to name-department pairs (e.g., "Alice-HR") | `[Alice(HR), Bob(Engineering)]` | `["Alice-HR", "Bob-Engineering"]` | [`employeeNameDepartmentPairs()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+
+#### 🔗 **FlatMap() Operations**
+
+| Sample Problem (as in Example class) | Input | Output | Function Name |
+|:------------------------------------:|:-----:|:------:|:-------------:|
+| Flatten a list of lists of integers | `[[1,2,3], [4,5], [6,7,8]]` | `[1, 2, 3, 4, 5, 6, 7, 8]` | [`flattenListOfLists()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| Split a list of sentences into words | `["Hello world", "Java streams"]` | `["Hello", "world", "Java", "streams"]` | [`splitSentencesToWords()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **Advanced:** Flatten a list of Employee objects, each with a list of skills, into a list of skills | `[Alice([Java,Spring]), Bob([Java,React])]` | `[Java, Spring, Java, React]` | [`flattenEmployeeSkills()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **Advanced:** Given a list of paragraphs (list of sentences), return a list of all unique words | `[["Java is great", "Streams are cool"], ["Practice Java streams"]]` | `["java", "is", "great", "streams", "are", "cool", "practice"]` | [`uniqueWordsFromParagraphs()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+
+#### 🔢 **Primitive Stream Operations**
+
+| Sample Problem (as in Example class) | Input | Output | Function Name |
+|:------------------------------------:|:-----:|:------:|:-------------:|
+| **mapToInt():** Convert strings to int stream for better performance | `["apple", "banana", "cherry"]` | `[5, 6, 6]` | [`mapToIntExample()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **mapToLong():** Convert integers to long stream for large numbers | `[1, 2, 3, 4, 5]` | `[1, 4, 9, 16, 25]` | [`mapToLongExample()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **mapToDouble():** Convert integers to double stream for mathematical operations | `[1, 4, 9, 16, 25]` | `[1.0, 2.0, 3.0, 4.0, 5.0]` | [`mapToDoubleExample()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **mapToObj():** Chain primitive and object operations | `["apple", "banana", "cherry"]` | `["Length: 5", "Length: 6", "Length: 6"]` | [`mapToObjExample()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+
+#### ⚡ **Advanced Map Operations**
+
+| Sample Problem (as in Example class) | Input | Output | Function Name |
+|:------------------------------------:|:-----:|:------:|:-------------:|
+| **Chaining:** Multiple map operations in sequence | `[Alice, Bob, Charlie]` | `["Employee: ALICE", "Employee: BOB", "Employee: CHARLIE"]` | [`chainingMapOperations()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **Performance:** Map() vs Reduce() comparison for transformations | `[1, 2, 3, 4, 5]` | `map(): [2, 4, 6, 8, 10]` vs `reduce(): 30` | [`mapVsReduceComparison()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **Parallel:** Parallel stream mapping for performance | `[1, 2, 3, 4, 5]` | `[1, 4, 9, 16, 25]` | [`parallelMapExample()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
+| **Comprehensive:** All map types in one example | `[Employees with skills]` | `[Various transformations]` | [`comprehensiveMapExample()`](src/main/java/streams/IntermediateOperations/Map_Example.java) |
 
 ### 🔍 Filter Operations
 
